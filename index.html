@@ -27,17 +27,24 @@
         * 前后端分离: (前端造外壳,单独打包自己的项目)(后端造颜料) 一次性写出相当于打包好的项目
         * 静态资源:  不需要后台涉及的项目
         * 根目录:index.html文件夹下 所在的目录
-        *       index.html             入口界面
-        *       static                 项目的素材等内容
-        *          |_ src              代码资源文件夹
-        *          |   |_ mod           模块文件夹
-        *          |   |   |_ Background.js  背景模块
-        *          |   |   |_ Player.js    我方飞机
-        *          |   |_ lib           封装的库
-        *          |   |   |_ proto.js  对象添加迭代器属性,实现对象解构赋值
-        *          |   |_ Game.js       游戏主函数的入口
-        *          |   |_ Status.js    数据管理中心
-        *          |_ images           图片文件夹
+        *       index.html                              入口界面
+        *       static                                  项目的素材等内容
+        *          |_ src                               代码资源文件夹
+        *          |   |_ mod                           模块文件夹
+        *          |   |   |_ Background.js             背景模块
+        *          |   |   |_ Player.js                 我方飞机
+        *          |   |   |_ Boom.js                   爆炸图片
+        *          |   |   |_ Bullet.js                 子弹
+        *          |   |   |_ DialogModal.js            弹出层(死亡后重新开启游戏)
+        *          |   |   |_ Enemy.js                  敌机
+        *          |   |   |_ playerConfig.js           飞机配置事件
+        *          |   |   |_ Score.js                  得分
+        *          |   |_ lib                           封装的库
+        *          |   |   |_ proto.js                  对象添加迭代器属性,实现对象解构赋值
+        *          |   |_ Game.js                       游戏主函数的入口
+        *          |   |_ Status.js                     数据管理中心
+        *          |   |_ tool.js                       计算矩形的公有面积是否碰撞
+        *          |_ images                            图片文件夹
         *
         *
         * 对外暴露出的接口特别少, 咱们只暴露出一个接口,Game的一个构造函数, 在哪里加载这个canvas的游戏内容
