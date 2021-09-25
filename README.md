@@ -3,7 +3,7 @@
 框架:
 
 ```
-	    *       index.html                              入口界面
+	*       index.html                              入口界面
         *       static                                  项目的素材等内容
         *          |_ src                               代码资源文件夹
         *          |   |_ mod                           模块文件夹
