@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>飞机大战</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <script type="module">
+        /*
+        * 面向对象编程 移动端的 游戏
+        *   一切抽象的物体,(敌机,子弹,飞机,背景...)对象 控制对象的方法(思想)实现
+        * 模块化编程: 对象的构造函数:抽象 类(class) 分成了多个文件 => 需要引入(import导入 以及 export导出)
+        * 不支持file协议,支持http/https协议
+        *
+        * 前后端分离: (前端造外壳,单独打包自己的项目)(后端造颜料) 一次性写出相当于打包好的项目
+        * 静态资源:  不需要后台涉及的项目
+        * 根目录:index.html文件夹下 所在的目录
+        *       index.html             入口界面
+        *       static                 项目的素材等内容
+        *          |_ src              代码资源文件夹
+        *          |   |_ mod           模块文件夹
+        *          |   |   |_ Background.js  背景模块
+        *          |   |   |_ Player.js    我方飞机
+        *          |   |_ lib           封装的库
+        *          |   |   |_ proto.js  对象添加迭代器属性,实现对象解构赋值
+        *          |   |_ Game.js       游戏主函数的入口
+        *          |   |_ Status.js    数据管理中心
+        *          |_ images           图片文件夹
+        *
+        *
+        * 对外暴露出的接口特别少, 咱们只暴露出一个接口,Game的一个构造函数, 在哪里加载这个canvas的游戏内容
+        *
+        * 不停的绘制:也就是说游戏的刷新率
+        * * */
+
+        import Game from "./static/src/Game.js";
+        //初始化游戏
+        //自动化做好所有事情 => 游戏初始化 (重启游戏)
+        //type="module" 所有代码的作用域都是在script中,不会去全局内
+
+        // let game = new Game(document.querySelector("body"))
+
+        //于是用以下方法导出到全局中
+        window.game = new Game(document.querySelector("body"))
+
+
+    </script>
+</body>
+</html>
